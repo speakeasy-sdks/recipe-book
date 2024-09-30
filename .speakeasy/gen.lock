@@ -5,8 +5,10 @@ management:
   docVersion: 1.0.0
   speakeasyVersion: 1.405.4
   generationVersion: 2.428.1
-  releaseVersion: 0.1.0
-  configChecksum: d5b487d4a48b233bf9cbd898cbe45618
+  releaseVersion: 0.1.1
+  configChecksum: 566850db3efb44b78ec1649cb60162d3
+  repoURL: https://github.com/speakeasy-sdks/recipe-book.git
+  installationURL: https://github.com/speakeasy-sdks/recipe-book
 features:
   typescript:
     additionalDependencies: 0.1.0
