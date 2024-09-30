@@ -1,0 +1,120 @@
+lockVersion: 2.0.0
+id: be6864d2-c44e-4d1e-863e-759aa84b218e
+management:
+  docChecksum: f8aff39b69843c7b66fd0f036c69de87
+  docVersion: 1.0.0
+  speakeasyVersion: 1.405.4
+  generationVersion: 2.428.1
+  releaseVersion: 0.1.0
+  configChecksum: d5b487d4a48b233bf9cbd898cbe45618
+features:
+  typescript:
+    additionalDependencies: 0.1.0
+    core: 3.18.1
+    defaultEnabledRetries: 0.1.0
+    devContainers: 2.90.0
+    envVarSecurityUsage: 0.1.1
+    globalSecurityCallbacks: 0.1.0
+    globalServerURLs: 2.82.4
+    groups: 2.81.2
+    nameOverrides: 2.81.2
+    responseFormat: 0.2.3
+    retries: 2.83.0
+    sdkHooks: 0.1.0
+generatedFiles:
+  - .devcontainer/README.md
+  - .devcontainer/devcontainer.json
+  - .devcontainer/setup.sh
+  - .eslintrc.cjs
+  - .gitattributes
+  - .npmignore
+  - CONTRIBUTING.md
+  - FUNCTIONS.md
+  - RUNTIMES.md
+  - USAGE.md
+  - docs/lib/utils/retryconfig.md
+  - docs/models/components/recipe.md
+  - docs/models/components/recipeinput.md
+  - docs/models/operations/deletereciperequest.md
+  - docs/models/operations/getrecipebyidrequest.md
+  - docs/models/operations/updatereciperequest.md
+  - docs/sdks/recipes/README.md
+  - docs/sdks/speakeasyrecipebook/README.md
+  - jsr.json
+  - package.json
+  - src/core.ts
+  - src/funcs/recipesCreate.ts
+  - src/funcs/recipesDelete.ts
+  - src/funcs/recipesGetAll.ts
+  - src/funcs/recipesGetById.ts
+  - src/funcs/recipesUpdate.ts
+  - src/hooks/hooks.ts
+  - src/hooks/index.ts
+  - src/hooks/types.ts
+  - src/index.ts
+  - src/lib/base64.ts
+  - src/lib/config.ts
+  - src/lib/dlv.ts
+  - src/lib/encodings.ts
+  - src/lib/env.ts
+  - src/lib/files.ts
+  - src/lib/http.ts
+  - src/lib/is-plain-object.ts
+  - src/lib/logger.ts
+  - src/lib/matchers.ts
+  - src/lib/primitives.ts
+  - src/lib/retries.ts
+  - src/lib/schemas.ts
+  - src/lib/sdks.ts
+  - src/lib/security.ts
+  - src/lib/url.ts
+  - src/models/components/index.ts
+  - src/models/components/recipe.ts
+  - src/models/components/recipeinput.ts
+  - src/models/errors/httpclienterrors.ts
+  - src/models/errors/index.ts
+  - src/models/errors/sdkerror.ts
+  - src/models/errors/sdkvalidationerror.ts
+  - src/models/operations/deleterecipe.ts
+  - src/models/operations/getrecipebyid.ts
+  - src/models/operations/index.ts
+  - src/models/operations/updaterecipe.ts
+  - src/sdk/index.ts
+  - src/sdk/recipes.ts
+  - src/sdk/sdk.ts
+  - src/types/blobs.ts
+  - src/types/constdatetime.ts
+  - src/types/enums.ts
+  - src/types/fp.ts
+  - src/types/index.ts
+  - src/types/operations.ts
+  - src/types/rfcdate.ts
+  - src/types/streams.ts
+  - tsconfig.json
+examples:
+  getRecipes:
+    speakeasy-default-get-recipes:
+      responses:
+        "200":
+          application/json: []
+  createRecipe:
+    speakeasy-default-create-recipe:
+      requestBody:
+        application/json: {"name": "<value>", "ingredients": [], "instructions": "<value>"}
+  getRecipeById:
+    speakeasy-default-get-recipe-by-id:
+      parameters:
+        path:
+          recipeId: "<id>"
+  updateRecipe:
+    speakeasy-default-update-recipe:
+      parameters:
+        path:
+          recipeId: "<id>"
+      requestBody:
+        application/json: {"name": "<value>", "ingredients": [], "instructions": "<value>"}
+  deleteRecipe:
+    speakeasy-default-delete-recipe:
+      parameters:
+        path:
+          recipeId: "<id>"

@@ -1,0 +1,29 @@
+speakeasyVersion: 1.405.4
+sources:
+    SpeakeasyRecipeBook-OAS:
+        sourceNamespace: speakeasy-recipe-book-oas
+        sourceRevisionDigest: sha256:aee5caa575c4738ec1c9c566d1f0d4e8a3d0956cd54851a329ca33d5042be52c
+        sourceBlobDigest: sha256:4d3ba84d0b63bf82137149abeb8509ea6d375f1cebf412a6926540d4de356229
+        tags:
+            - latest
+targets:
+    speakeasy-recipe-book:
+        source: SpeakeasyRecipeBook-OAS
+        sourceNamespace: speakeasy-recipe-book-oas
+        sourceRevisionDigest: sha256:aee5caa575c4738ec1c9c566d1f0d4e8a3d0956cd54851a329ca33d5042be52c
+        sourceBlobDigest: sha256:4d3ba84d0b63bf82137149abeb8509ea6d375f1cebf412a6926540d4de356229
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        SpeakeasyRecipeBook-OAS:
+            inputs:
+                - location: RecipeOpenAPISpec.yaml
+            overlays:
+                - location: .speakeasy/speakeasy-modifications-overlay.yaml
+            registry:
+                location: registry.speakeasyapi.dev/loganinc/loganinc/speakeasy-recipe-book-oas
+    targets:
+        speakeasy-recipe-book:
+            target: typescript
+            source: SpeakeasyRecipeBook-OAS

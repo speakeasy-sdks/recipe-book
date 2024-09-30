@@ -1,0 +1,14 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    SpeakeasyRecipeBook-OAS:
+        inputs:
+            - location: RecipeOpenAPISpec.yaml
+        overlays:
+            - location: .speakeasy/speakeasy-modifications-overlay.yaml
+        registry:
+            location: registry.speakeasyapi.dev/loganinc/loganinc/speakeasy-recipe-book-oas
+targets:
+    speakeasy-recipe-book:
+        target: typescript
+        source: SpeakeasyRecipeBook-OAS
