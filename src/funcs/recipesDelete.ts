@@ -40,10 +40,8 @@ export async function recipesDelete(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.DeleteRecipeRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

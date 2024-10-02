@@ -11,8 +11,16 @@ Developer-friendly & type-safe Typescript SDK specifically catered to leverage *
 
 
 <br /><br />
-> [!IMPORTANT]
-> This SDK is not yet ready for production use. To complete setup please follow the steps outlined in your [workspace](https://app.speakeasy.com/org/loganinc/loganinc). Delete this section before > publishing to a package manager.
+## Applying Overlays
+
+In this SDK, we demonstrate how to apply overlays to extend the functionality of the Recipe Book API.
+
+For example, we've added a new "Snacks" tag to the API. You can view the overlay [here](./.speakeasy/add_snacks_tag_overlay.yaml).
+
+To apply this overlay, use the following Speakeasy CLI command:
+
+```bash
+speakeasy overlay apply --spec ./RecipeOpenAPISpec.yaml --overlay ./.speakeasy/add_snacks_tag_overlay.yaml --output ./RecipeOpenAPISpecWithSnacks.yaml
 
 <!-- Start Summary [summary] -->
 ## Summary

@@ -15,7 +15,7 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: true
 typescript:
-  version: 0.1.1
+  version: 0.1.2
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
@@ -26,6 +26,7 @@ typescript:
   enumFormat: union
   envVarPrefix: SPEAKEASYRECIPEBOOK
   flattenGlobalSecurity: true
+  flatteningOrder: body-first
   imports:
     option: openapi
     paths:

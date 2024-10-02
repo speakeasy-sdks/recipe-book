@@ -3,16 +3,16 @@ id: be6864d2-c44e-4d1e-863e-759aa84b218e
 management:
   docChecksum: f8aff39b69843c7b66fd0f036c69de87
   docVersion: 1.0.0
-  speakeasyVersion: 1.405.4
-  generationVersion: 2.428.1
-  releaseVersion: 0.1.1
-  configChecksum: 566850db3efb44b78ec1649cb60162d3
+  speakeasyVersion: 1.405.10
+  generationVersion: 2.429.0
+  releaseVersion: 0.1.2
+  configChecksum: 7e68687990a35efe20f3ad13a5f86914
   repoURL: https://github.com/speakeasy-sdks/recipe-book.git
   installationURL: https://github.com/speakeasy-sdks/recipe-book
 features:
   typescript:
     additionalDependencies: 0.1.0
-    core: 3.18.1
+    core: 3.18.2
     defaultEnabledRetries: 0.1.0
     devContainers: 2.90.0
     envVarSecurityUsage: 0.1.1

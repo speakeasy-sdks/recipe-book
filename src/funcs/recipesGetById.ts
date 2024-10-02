@@ -40,10 +40,8 @@ export async function recipesGetById(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.GetRecipeByIdRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
