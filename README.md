@@ -15,7 +15,7 @@ Developer-friendly & type-safe Typescript SDK specifically catered to leverage *
 
 In this SDK, we demonstrate how to apply overlays to extend the functionality of the Recipe Book API.
 
-For example, we've added a new "Snacks" tag to the API. You can view the overlay [here](./.speakeasy/add_snacks_tag_overlay.yaml).
+For example, we've added a new "Snacks" tag to the API. You can view the overlay [here](https://github.com/speakeasy-sdks/recipe-book/blob/main/add_snack_tag_overlay.yaml).
 
 To apply this overlay, use the following Speakeasy CLI command:
 
