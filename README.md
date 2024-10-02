@@ -21,6 +21,7 @@ To apply this overlay, use the following Speakeasy CLI command:
 
 ```bash
 speakeasy overlay apply --spec ./RecipeOpenAPISpec.yaml --overlay ./.speakeasy/add_snacks_tag_overlay.yaml --output ./RecipeOpenAPISpecWithSnacks.yaml
+```
 
 <!-- Start Summary [summary] -->
 ## Summary
