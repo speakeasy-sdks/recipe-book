@@ -17,7 +17,7 @@ speakeasy configure sources
 
 Application of overlays is shown in the [workflow.yaml](https://github.com/speakeasy-sdks/recipe-book/blob/main/.speakeasy/workflow.yaml#L7-L9) file.
 
-### Resources
+##### Resources
 - [Create Overlays](https://www.speakeasy.com/docs/overlays/create-overlays)
 - [Apply Overlays](https://www.speakeasy.com/docs/overlays/apply-overlays)
 - [Common Overlays for SDKs](https://www.speakeasy.com/examples/sdk-generation/overlays/overlays)
