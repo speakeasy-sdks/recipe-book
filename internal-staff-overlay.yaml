@@ -1,0 +1,12 @@
+overlay: 1.0.0
+info:
+  title: Secure Internal Staff Management Endpoint
+  version: 1.0.0
+actions:
+  - target: $.paths['/internal/staff']
+    update:
+        x-internal: true
+        description: "This endpoint is restricted for internal staff management and not visible in public SDKs."
+  - target: $.paths['/internal/staff']
+    remove: true
+          

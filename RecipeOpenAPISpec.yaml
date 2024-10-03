@@ -93,6 +93,23 @@ paths:
           description: Recipe deleted successfully
         '404':
           description: Recipe not found
+          
+  /internal/staff:
+    get:
+      summary: Internal staff endpoint
+      operationId: internalStaff
+      description: This is an internal endpoint for staff management.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Internal staff data"
 
 components:
   schemas:

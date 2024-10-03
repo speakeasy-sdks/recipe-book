@@ -23,7 +23,7 @@ import { Result } from "../types/fp.js";
 /**
  * Create a new recipe
  */
-export async function recipesCreate(
+export async function createRecipe(
   client: SpeakeasyRecipeBookCore,
   request: components.RecipeInput,
   options?: RequestOptions,

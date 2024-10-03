@@ -5,7 +5,8 @@ sources:
         inputs:
             - location: RecipeOpenAPISpec.yaml
         overlays:
-            - location: .speakeasy/speakeasy-modifications-overlay.yaml
+            - location: internal-staff-overlay.yaml
+            - location: add_snack_tag_overlay.yaml
         registry:
             location: registry.speakeasyapi.dev/loganinc/loganinc/speakeasy-recipe-book-oas
 targets:

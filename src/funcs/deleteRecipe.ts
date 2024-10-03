@@ -4,7 +4,7 @@
 
 import * as z from "zod";
 import { SpeakeasyRecipeBookCore } from "../core.js";
-import { encodeJSON, encodeSimple } from "../lib/encodings.js";
+import { encodeSimple } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
@@ -22,11 +22,11 @@ import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Update an existing recipe by ID
+ * Delete a recipe by ID
  */
-export async function recipesUpdate(
+export async function deleteRecipe(
   client: SpeakeasyRecipeBookCore,
-  request: operations.UpdateRecipeRequest,
+  request: operations.DeleteRecipeRequest,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -42,14 +42,14 @@ export async function recipesUpdate(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.UpdateRecipeRequest$outboundSchema.parse(value),
+    (value) => operations.DeleteRecipeRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return parsed;
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload.RecipeInput, { explode: true });
+  const body = null;
 
   const pathParams = {
     recipeId: encodeSimple("recipeId", payload.recipeId, {
@@ -61,18 +61,17 @@ export async function recipesUpdate(
   const path = pathToFunc("/recipes/{recipeId}")(pathParams);
 
   const headers = new Headers({
-    "Content-Type": "application/json",
     Accept: "*/*",
   });
 
   const context = {
-    operationID: "updateRecipe",
+    operationID: "deleteRecipe",
     oAuth2Scopes: [],
     securitySource: null,
   };
 
   const requestRes = client._createRequest(context, {
-    method: "PUT",
+    method: "DELETE",
     path: path,
     headers: headers,
     body: body,
@@ -105,7 +104,7 @@ export async function recipesUpdate(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.nil(200, z.void()),
+    M.nil(204, z.void()),
     M.fail([404, "4XX", "5XX"]),
   )(response);
   if (!result.ok) {

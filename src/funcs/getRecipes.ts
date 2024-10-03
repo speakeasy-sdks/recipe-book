@@ -22,7 +22,7 @@ import { Result } from "../types/fp.js";
 /**
  * Get all recipes
  */
-export async function recipesGetAll(
+export async function getRecipes(
   client: SpeakeasyRecipeBookCore,
   options?: RequestOptions,
 ): Promise<

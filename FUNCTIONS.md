@@ -20,7 +20,7 @@ specific category of applications.
 
 ```typescript
 import { SpeakeasyRecipeBookCore } from "speakeasy-recipe-book/core.js";
-import { recipesGetAll } from "speakeasy-recipe-book/funcs/recipesGetAll.js";
+import { getRecipes } from "speakeasy-recipe-book/funcs/getRecipes.js";
 import { SDKValidationError } from "speakeasy-recipe-book/models/errors/sdkvalidationerror.js";
 
 // Use `SpeakeasyRecipeBookCore` for best tree-shaking performance.
@@ -28,7 +28,7 @@ import { SDKValidationError } from "speakeasy-recipe-book/models/errors/sdkvalid
 const speakeasyRecipeBook = new SpeakeasyRecipeBookCore();
 
 async function run() {
-  const res = await recipesGetAll(speakeasyRecipeBook);
+  const res = await getRecipes(speakeasyRecipeBook);
 
   switch (true) {
     case res.ok:

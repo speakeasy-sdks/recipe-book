@@ -1,27 +1,21 @@
-# speakeasy-recipe-book
+# The Speakeasy Recipe Book SDK for TypeScript
 
-Developer-friendly & type-safe Typescript SDK specifically catered to leverage *speakeasy-recipe-book* API.
+Developer-friendly & type-safe Typescript SDK demonstrating real-code examples of various tasks and use cases.
 
-<div align="left">
-    <a href="https://www.speakeasy.com/?utm_source=speakeasy-recipe-book&utm_campaign=typescript"><img src="https://custom-icon-badges.demolab.com/badge/-Built%20By%20Speakeasy-212015?style=for-the-badge&logoColor=FBE331&logo=speakeasy&labelColor=545454" /></a>
-    <a href="https://opensource.org/licenses/MIT">
-        <img src="https://img.shields.io/badge/License-MIT-blue.svg" style="width: 100px; height: 28px;" />
-    </a>
-</div>
-
-
-<br /><br />
-## Applying Overlays
+## Overlays
 
 In this SDK, we demonstrate how to apply overlays to extend the functionality of the Recipe Book API.
 
 For example, we've added a new "Snacks" tag to the API. You can view the overlay [here](https://github.com/speakeasy-sdks/recipe-book/blob/main/add_snack_tag_overlay.yaml).
 
-To apply this overlay, use the following Speakeasy CLI command:
+We've also hidden an internal-only operation from the public SDKs and marked it as internal only by adding an overlay [here](https://github.com/speakeasy-sdks/recipe-book/blob/main/hide_internal_endpoint_overlay.yaml).
 
+Overlays are then added as a new workflow source using:
 ```bash
-speakeasy overlay apply --spec ./RecipeOpenAPISpec.yaml --overlay ./.speakeasy/add_snacks_tag_overlay.yaml --output ./RecipeOpenAPISpecWithSnacks.yaml
+speakeasy configure sources
 ```
+
+Application of overlays is shown in the [workflow.yaml](https://github.com/speakeasy-sdks/recipe-book/blob/main/workflow.yaml) file.
 
 <!-- Start Summary [summary] -->
 ## Summary

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: be6864d2-c44e-4d1e-863e-759aa84b218e
 management:
-  docChecksum: f8aff39b69843c7b66fd0f036c69de87
+  docChecksum: 8d6942884b52871ceba01ddcd7e5e4db
   docVersion: 1.0.0
-  speakeasyVersion: 1.405.10
+  speakeasyVersion: 1.406.0
   generationVersion: 2.429.0
-  releaseVersion: 0.1.2
-  configChecksum: 7e68687990a35efe20f3ad13a5f86914
+  releaseVersion: 0.4.5
+  configChecksum: 33d2cb48561ef60435ed9ec20adc6da9
   repoURL: https://github.com/speakeasy-sdks/recipe-book.git
   installationURL: https://github.com/speakeasy-sdks/recipe-book
 features:
@@ -18,8 +18,6 @@ features:
     envVarSecurityUsage: 0.1.1
     globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.82.4
-    groups: 2.81.2
-    nameOverrides: 2.81.2
     responseFormat: 0.2.3
     retries: 2.83.0
     sdkHooks: 0.1.0
@@ -40,16 +38,15 @@ generatedFiles:
   - docs/models/operations/deletereciperequest.md
   - docs/models/operations/getrecipebyidrequest.md
   - docs/models/operations/updatereciperequest.md
-  - docs/sdks/recipes/README.md
   - docs/sdks/speakeasyrecipebook/README.md
   - jsr.json
   - package.json
   - src/core.ts
-  - src/funcs/recipesCreate.ts
-  - src/funcs/recipesDelete.ts
-  - src/funcs/recipesGetAll.ts
-  - src/funcs/recipesGetById.ts
-  - src/funcs/recipesUpdate.ts
+  - src/funcs/createRecipe.ts
+  - src/funcs/deleteRecipe.ts
+  - src/funcs/getRecipeById.ts
+  - src/funcs/getRecipes.ts
+  - src/funcs/updateRecipe.ts
   - src/hooks/hooks.ts
   - src/hooks/index.ts
   - src/hooks/types.ts
@@ -82,7 +79,6 @@ generatedFiles:
   - src/models/operations/index.ts
   - src/models/operations/updaterecipe.ts
   - src/sdk/index.ts
-  - src/sdk/recipes.ts
   - src/sdk/sdk.ts
   - src/types/blobs.ts
   - src/types/constdatetime.ts
@@ -120,3 +116,8 @@ examples:
       parameters:
         path:
           recipeId: "<id>"
+  internalStaff:
+    speakeasy-default-internal-staff:
+      responses:
+        "200":
+          application/json: {"message": "Internal staff data"}
