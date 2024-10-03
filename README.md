@@ -4,7 +4,7 @@ Developer-friendly & type-safe Typescript SDK demonstrating real-code examples o
 
 ## Overlays
 
-In this SDK, we demonstrate how to apply overlays to extend the functionality of the Recipe Book API.
+In this SDK, Overlays are applied to extend or alter the functionality of the Recipe Book API.
 
 For example, we've added a new "Snacks" tag to the API. You can view the overlay [here](https://github.com/speakeasy-sdks/recipe-book/blob/main/add_snack_tag_overlay.yaml).
 
@@ -15,7 +15,12 @@ Overlays are then added as a new workflow source using:
 speakeasy configure sources
 ```
 
-Application of overlays is shown in the [workflow.yaml](https://github.com/speakeasy-sdks/recipe-book/blob/main/workflow.yaml) file.
+Application of overlays is shown in the [workflow.yaml](https://github.com/speakeasy-sdks/recipe-book/blob/main/.speakeasy/workflow.yaml#L7-L9) file.
+
+### Resources
+- [Create Overlays](https://www.speakeasy.com/docs/overlays/create-overlays)
+- [Apply Overlays](https://www.speakeasy.com/docs/overlays/apply-overlays)
+- [Common Overlays for SDKs](https://www.speakeasy.com/examples/sdk-generation/overlays/overlays)
 
 <!-- Start Summary [summary] -->
 ## Summary
