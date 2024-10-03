@@ -22,6 +22,7 @@ Application of overlays is shown in the [workflow.yaml](https://github.com/speak
 - [Apply Overlays](https://www.speakeasy.com/docs/overlays/apply-overlays)
 - [Common Overlays for SDKs](https://www.speakeasy.com/examples/sdk-generation/overlays/overlays)
 
+## Auto-generated SDK documentions starts here.
 <!-- Start Summary [summary] -->
 ## Summary
 
