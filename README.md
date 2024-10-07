@@ -2,7 +2,7 @@
 
 Developer-friendly & type-safe Typescript SDK demonstrating real-code examples of various tasks and use cases.
 
-!["The Recipe Book SDK"](recipe-book-sdk.png)
+!["The Recipe Book SDK"](recipe-book-logo.png)
 
 ## Overlays
 
