@@ -2,6 +2,8 @@
 
 Developer-friendly & type-safe Typescript SDK demonstrating real-code examples of various tasks and use cases.
 
+!["The Recipe Book SDK"](recipe-book-sdk.png)
+
 ## Overlays
 
 Overlays are applied to extend or alter the functionality of the Recipe Book API.
