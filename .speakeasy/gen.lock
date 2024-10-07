@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: be6864d2-c44e-4d1e-863e-759aa84b218e
 management:
-  docChecksum: 8d6942884b52871ceba01ddcd7e5e4db
+  docChecksum: fa735876551f1213c57c6ddfd204379a
   docVersion: 1.0.0
-  speakeasyVersion: 1.406.0
-  generationVersion: 2.429.0
-  releaseVersion: 0.4.5
-  configChecksum: 33d2cb48561ef60435ed9ec20adc6da9
+  speakeasyVersion: 1.410.1
+  generationVersion: 2.434.3
+  releaseVersion: 0.7.0
+  configChecksum: c045bace3d2a62d47a1b30cd49f2c4d2
   repoURL: https://github.com/speakeasy-sdks/recipe-book.git
   installationURL: https://github.com/speakeasy-sdks/recipe-book
 features:
@@ -15,9 +15,14 @@ features:
     core: 3.18.2
     defaultEnabledRetries: 0.1.0
     devContainers: 2.90.0
+    enumUnions: 0.1.0
+    enums: 2.82.1
     envVarSecurityUsage: 0.1.1
     globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.82.4
+    groups: 2.81.2
+    nameOverrides: 2.81.2
+    openEnums: 0.1.1
     responseFormat: 0.2.3
     retries: 2.83.0
     sdkHooks: 0.1.0
@@ -35,18 +40,22 @@ generatedFiles:
   - docs/lib/utils/retryconfig.md
   - docs/models/components/recipe.md
   - docs/models/components/recipeinput.md
+  - docs/models/components/recipestatus.md
   - docs/models/operations/deletereciperequest.md
   - docs/models/operations/getrecipebyidrequest.md
+  - docs/models/operations/getrecipestatusrequest.md
   - docs/models/operations/updatereciperequest.md
+  - docs/sdks/recipes/README.md
   - docs/sdks/speakeasyrecipebook/README.md
   - jsr.json
   - package.json
   - src/core.ts
-  - src/funcs/createRecipe.ts
-  - src/funcs/deleteRecipe.ts
-  - src/funcs/getRecipeById.ts
-  - src/funcs/getRecipes.ts
-  - src/funcs/updateRecipe.ts
+  - src/funcs/getRecipeStatus.ts
+  - src/funcs/recipesCreate.ts
+  - src/funcs/recipesDelete.ts
+  - src/funcs/recipesGetAll.ts
+  - src/funcs/recipesGetById.ts
+  - src/funcs/recipesUpdate.ts
   - src/hooks/hooks.ts
   - src/hooks/index.ts
   - src/hooks/types.ts
@@ -70,15 +79,18 @@ generatedFiles:
   - src/models/components/index.ts
   - src/models/components/recipe.ts
   - src/models/components/recipeinput.ts
+  - src/models/components/recipestatus.ts
   - src/models/errors/httpclienterrors.ts
   - src/models/errors/index.ts
   - src/models/errors/sdkerror.ts
   - src/models/errors/sdkvalidationerror.ts
   - src/models/operations/deleterecipe.ts
   - src/models/operations/getrecipebyid.ts
+  - src/models/operations/getrecipestatus.ts
   - src/models/operations/index.ts
   - src/models/operations/updaterecipe.ts
   - src/sdk/index.ts
+  - src/sdk/recipes.ts
   - src/sdk/sdk.ts
   - src/types/blobs.ts
   - src/types/constdatetime.ts
@@ -121,3 +133,11 @@ examples:
       responses:
         "200":
           application/json: {"message": "Internal staff data"}
+  getRecipeStatus:
+    speakeasy-default-get-recipe-status:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: "not_started"

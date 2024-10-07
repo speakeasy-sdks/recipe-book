@@ -5,7 +5,9 @@ import { SpeakeasyRecipeBook } from "speakeasy-recipe-book";
 const speakeasyRecipeBook = new SpeakeasyRecipeBook();
 
 async function run() {
-  const result = await speakeasyRecipeBook.getRecipes();
+  const result = await speakeasyRecipeBook.getRecipeStatus({
+    id: "<id>",
+  });
 
   // Handle the result
   console.log(result);

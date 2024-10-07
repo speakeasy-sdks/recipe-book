@@ -1,17 +1,17 @@
-speakeasyVersion: 1.406.0
+speakeasyVersion: 1.410.1
 sources:
     SpeakeasyRecipeBook-OAS:
         sourceNamespace: speakeasy-recipe-book-oas
-        sourceRevisionDigest: sha256:b3eaadfacac6408e1316a020428852b99893ad61068865e3c4e63004f0675ee4
-        sourceBlobDigest: sha256:80211ba852bd9e1150e7b3c2169816db436cda663088e1a68762381a8bc250fc
+        sourceRevisionDigest: sha256:1ca8e2b0cf60c2bfaf43a9fc7586c6429cc4a14e377ebbe4261a48763674a852
+        sourceBlobDigest: sha256:a767e5b292e603eb6db2f81048306257e48e248c48c573fd325ca384c1260533
         tags:
             - latest
 targets:
     speakeasy-recipe-book:
         source: SpeakeasyRecipeBook-OAS
         sourceNamespace: speakeasy-recipe-book-oas
-        sourceRevisionDigest: sha256:b3eaadfacac6408e1316a020428852b99893ad61068865e3c4e63004f0675ee4
-        sourceBlobDigest: sha256:80211ba852bd9e1150e7b3c2169816db436cda663088e1a68762381a8bc250fc
+        sourceRevisionDigest: sha256:1ca8e2b0cf60c2bfaf43a9fc7586c6429cc4a14e377ebbe4261a48763674a852
+        sourceBlobDigest: sha256:a767e5b292e603eb6db2f81048306257e48e248c48c573fd325ca384c1260533
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -22,6 +22,7 @@ workflow:
             overlays:
                 - location: internal-staff-overlay.yaml
                 - location: add_snack_tag_overlay.yaml
+                - location: .speakeasy/speakeasy-modifications-overlay.yaml
             registry:
                 location: registry.speakeasyapi.dev/loganinc/loganinc/speakeasy-recipe-book-oas
     targets:

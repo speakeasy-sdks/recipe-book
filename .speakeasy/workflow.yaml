@@ -7,6 +7,7 @@ sources:
         overlays:
             - location: internal-staff-overlay.yaml
             - location: add_snack_tag_overlay.yaml
+            - location: .speakeasy/speakeasy-modifications-overlay.yaml
         registry:
             location: registry.speakeasyapi.dev/loganinc/loganinc/speakeasy-recipe-book-oas
 targets:

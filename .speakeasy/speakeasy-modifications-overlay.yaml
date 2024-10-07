@@ -1,0 +1,59 @@
+overlay: 1.0.0
+info:
+  title: Speakeasy Modifications
+  version: 0.0.2
+  x-speakeasy-metadata:
+    after: ""
+    before: ""
+    type: speakeasy-modifications
+actions:
+  - target: $["paths"]["/recipes/{recipeId}"]["delete"]
+    update:
+      x-speakeasy-group: recipes
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.<no_group>.deleteRecipe()
+      after: sdk.recipes.delete()
+      reviewed_at: 1728308551187
+      created_at: 1728308548955
+  - target: $["paths"]["/recipes"]["get"]
+    update:
+      x-speakeasy-group: recipes
+      x-speakeasy-name-override: getAll
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.<no_group>.fetchAllRecipes()
+      after: sdk.recipes.getAll()
+      reviewed_at: 1728308551187
+      created_at: 1728308548955
+  - target: $["paths"]["/recipes"]["post"]
+    update:
+      x-speakeasy-group: recipes
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.<no_group>.createRecipe()
+      after: sdk.recipes.create()
+      reviewed_at: 1728308551187
+      created_at: 1728308548955
+  - target: $["paths"]["/recipes/{recipeId}"]["get"]
+    update:
+      x-speakeasy-group: recipes
+      x-speakeasy-name-override: getById
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.<no_group>.getRecipeById()
+      after: sdk.recipes.getById()
+      reviewed_at: 1728308551187
+      created_at: 1728308548955
+  - target: $["paths"]["/recipes/{recipeId}"]["put"]
+    update:
+      x-speakeasy-group: recipes
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.<no_group>.updateRecipe()
+      after: sdk.recipes.update()
+      reviewed_at: 1728308551187
+      created_at: 1728308548955

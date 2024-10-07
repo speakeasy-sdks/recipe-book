@@ -16,10 +16,23 @@ speakeasy configure sources
 
 Application of overlays is shown in the [workflow.yaml](https://github.com/speakeasy-sdks/recipe-book/blob/main/.speakeasy/workflow.yaml#L7-L9) file.
 
+## `x-speakeasy` Extensions
+
+Speakeast extensions provide fine-tuned control over the SDK, enabling modification to behaviors like retries, pagination, error handling, and other advanced SDK features.
+
+- [Use `x-speakeasy-name-override` to rename an operation in the OpenAPI Spec.]()
+- [Use `x-speakeasy-enums` to add enums to an operation in the OpenAPI Spec.]()
+
 ##### Resources
-- [Create Overlays](https://www.speakeasy.com/docs/overlays/create-overlays)
-- [Apply Overlays](https://www.speakeasy.com/docs/overlays/apply-overlays)
-- [Common Overlays for SDKs](https://www.speakeasy.com/examples/sdk-generation/overlays/overlays)
+- [Customization Basics](https://www.speakeasy.com/docs/customize-basics#2-using-x-speakeasy-extensions)
+- [`x-speakeasy-name-override`](https://www.speakeasy.com/docs/methods#change-method-names)
+- [`x-speakeasy-enums`](https://www.speakeasy.com/docs/data-model/enums#enum-member-names)
+
+
+
+
+
+
 
 ## Auto-generated SDK documentions starts here.
 <!-- Start Summary [summary] -->
@@ -93,7 +106,9 @@ import { SpeakeasyRecipeBook } from "speakeasy-recipe-book";
 const speakeasyRecipeBook = new SpeakeasyRecipeBook();
 
 async function run() {
-  const result = await speakeasyRecipeBook.recipes.getAll();
+  const result = await speakeasyRecipeBook.getRecipeStatus({
+    id: "<id>",
+  });
 
   // Handle the result
   console.log(result);
@@ -118,6 +133,9 @@ run();
 * [update](docs/sdks/recipes/README.md#update) - Update an existing recipe by ID
 * [delete](docs/sdks/recipes/README.md#delete) - Delete a recipe by ID
 
+### [SpeakeasyRecipeBook SDK](docs/sdks/speakeasyrecipebook/README.md)
+
+* [getRecipeStatus](docs/sdks/speakeasyrecipebook/README.md#getrecipestatus) - Get the status of a recipe
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -137,12 +155,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
-- [recipesCreate](docs/sdks/recipes/README.md#create)
-- [recipesDelete](docs/sdks/recipes/README.md#delete)
-- [recipesGetAll](docs/sdks/recipes/README.md#getall)
-- [recipesGetById](docs/sdks/recipes/README.md#getbyid)
-- [recipesUpdate](docs/sdks/recipes/README.md#update)
-
+- [`getRecipeStatus`](docs/sdks/speakeasyrecipebook/README.md#getrecipestatus) - Get the status of a recipe
+- [`recipesCreate`](docs/sdks/recipes/README.md#create) - Create a new recipe
+- [`recipesDelete`](docs/sdks/recipes/README.md#delete) - Delete a recipe by ID
+- [`recipesGetAll`](docs/sdks/recipes/README.md#getall) - Get all recipes
+- [`recipesGetById`](docs/sdks/recipes/README.md#getbyid) - Get a recipe by ID
+- [`recipesUpdate`](docs/sdks/recipes/README.md#update) - Update an existing recipe by ID
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->
@@ -159,7 +177,9 @@ import { SpeakeasyRecipeBook } from "speakeasy-recipe-book";
 const speakeasyRecipeBook = new SpeakeasyRecipeBook();
 
 async function run() {
-  const result = await speakeasyRecipeBook.recipes.getAll({
+  const result = await speakeasyRecipeBook.getRecipeStatus({
+    id: "<id>",
+  }, {
     retries: {
       strategy: "backoff",
       backoff: {
@@ -198,7 +218,9 @@ const speakeasyRecipeBook = new SpeakeasyRecipeBook({
 });
 
 async function run() {
-  const result = await speakeasyRecipeBook.recipes.getAll();
+  const result = await speakeasyRecipeBook.getRecipeStatus({
+    id: "<id>",
+  });
 
   // Handle the result
   console.log(result);
@@ -224,7 +246,7 @@ If a HTTP request fails, an operation my also throw an error from the `models/er
 | InvalidRequestError                                  | Any input used to create a request is invalid        |
 | UnexpectedClientError                                | Unrecognised or unexpected error                     |
 
-In addition, when custom error responses are specified for an operation, the SDK may throw their associated Error type. You can refer to respective *Errors* tables in SDK docs for more details on possible error types for each operation. For example, the `getAll` method may throw the following errors:
+In addition, when custom error responses are specified for an operation, the SDK may throw their associated Error type. You can refer to respective *Errors* tables in SDK docs for more details on possible error types for each operation. For example, the `getRecipeStatus` method may throw the following errors:
 
 | Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
@@ -239,7 +261,9 @@ const speakeasyRecipeBook = new SpeakeasyRecipeBook();
 async function run() {
   let result;
   try {
-    result = await speakeasyRecipeBook.recipes.getAll();
+    result = await speakeasyRecipeBook.getRecipeStatus({
+      id: "<id>",
+    });
 
     // Handle the result
     console.log(result);
@@ -285,7 +309,9 @@ const speakeasyRecipeBook = new SpeakeasyRecipeBook({
 });
 
 async function run() {
-  const result = await speakeasyRecipeBook.recipes.getAll();
+  const result = await speakeasyRecipeBook.getRecipeStatus({
+    id: "<id>",
+  });
 
   // Handle the result
   console.log(result);
@@ -308,7 +334,9 @@ const speakeasyRecipeBook = new SpeakeasyRecipeBook({
 });
 
 async function run() {
-  const result = await speakeasyRecipeBook.recipes.getAll();
+  const result = await speakeasyRecipeBook.getRecipeStatus({
+    id: "<id>",
+  });
 
   // Handle the result
   console.log(result);

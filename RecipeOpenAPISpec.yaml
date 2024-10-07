@@ -8,10 +8,29 @@ servers:
     description: Main production server
 
 paths:
+  /recipes/{id}/status:
+    get:
+      summary: Get the status of a recipe
+      operationId: getRecipeStatus
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The status of the recipe
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecipeStatus'
+
   /recipes:
     get:
       summary: Get all recipes
       operationId: getRecipes
+      x-speakeasy-name-override: fetchAllRecipes
       responses:
         '200':
           description: A list of recipes
@@ -113,6 +132,17 @@ paths:
 
 components:
   schemas:
+    RecipeStatus:
+      type: string
+      enum:
+        - not_started
+        - in_progress
+        - complete
+      x-speakeasy-enums:
+        - NotStarted
+        - InProgress
+        - Complete
+      x-speakeasy-unknown-values: allow
     Recipe:
       type: object
       properties:

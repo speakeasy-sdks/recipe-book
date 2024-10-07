@@ -4,4 +4,5 @@
 
 export * from "./deleterecipe.js";
 export * from "./getrecipebyid.js";
+export * from "./getrecipestatus.js";
 export * from "./updaterecipe.js";
