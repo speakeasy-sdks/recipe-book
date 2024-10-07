@@ -2,8 +2,6 @@
 
 Developer-friendly & type-safe Typescript SDK demonstrating real-code examples of various tasks and use cases.
 
-!["The Recipe Book SDK"](recipe-book-logo.png)
-
 <p align="center">
   <img width="50%" src="recipe-book-logo.png" alt="The Recipe Book logo" title="The Recipe Book">
 </p>
