@@ -7,16 +7,16 @@ import { SpeakeasyRecipeBookCore } from "../core.js";
 import * as M from "../lib/matchers.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { pathToFunc } from "../lib/url.js";
-import * as components from "../models/components/index.js";
+import * as custom_components from "../models/custom_components/index.js";
 import {
   ConnectionError,
   InvalidRequestError,
   RequestAbortedError,
   RequestTimeoutError,
   UnexpectedClientError,
-} from "../models/errors/httpclienterrors.js";
-import { SDKError } from "../models/errors/sdkerror.js";
-import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
+} from "../models/custom_errors/httpclienterrors.js";
+import { SDKError } from "../models/custom_errors/sdkerror.js";
+import { SDKValidationError } from "../models/custom_errors/sdkvalidationerror.js";
 import { Result } from "../types/fp.js";
 
 /**
@@ -27,7 +27,7 @@ export async function recipesGetAll(
   options?: RequestOptions,
 ): Promise<
   Result<
-    Array<components.Recipe>,
+    Array<custom_components.Recipe>,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -73,7 +73,7 @@ export async function recipesGetAll(
   const response = doResult.value;
 
   const [result] = await M.match<
-    Array<components.Recipe>,
+    Array<custom_components.Recipe>,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -82,7 +82,7 @@ export async function recipesGetAll(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, z.array(components.Recipe$inboundSchema)),
+    M.json(200, z.array(custom_components.Recipe$inboundSchema)),
     M.fail(["4XX", "5XX"]),
   )(response);
   if (!result.ok) {

@@ -8,17 +8,17 @@ import * as M from "../lib/matchers.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { pathToFunc } from "../lib/url.js";
-import * as components from "../models/components/index.js";
+import * as custom_components from "../models/custom_components/index.js";
 import {
   ConnectionError,
   InvalidRequestError,
   RequestAbortedError,
   RequestTimeoutError,
   UnexpectedClientError,
-} from "../models/errors/httpclienterrors.js";
-import { SDKError } from "../models/errors/sdkerror.js";
-import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
-import * as operations from "../models/operations/index.js";
+} from "../models/custom_errors/httpclienterrors.js";
+import { SDKError } from "../models/custom_errors/sdkerror.js";
+import { SDKValidationError } from "../models/custom_errors/sdkvalidationerror.js";
+import * as custom_operations from "../models/custom_operations/index.js";
 import { Result } from "../types/fp.js";
 
 /**
@@ -26,11 +26,11 @@ import { Result } from "../types/fp.js";
  */
 export async function getRecipeStatus(
   client: SpeakeasyRecipeBookCore,
-  request: operations.GetRecipeStatusRequest,
+  request: custom_operations.GetRecipeStatusRequest,
   options?: RequestOptions,
 ): Promise<
   Result<
-    components.RecipeStatus,
+    custom_components.RecipeStatus,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -42,7 +42,8 @@ export async function getRecipeStatus(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.GetRecipeStatusRequest$outboundSchema.parse(value),
+    (value) =>
+      custom_operations.GetRecipeStatusRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -95,7 +96,7 @@ export async function getRecipeStatus(
   const response = doResult.value;
 
   const [result] = await M.match<
-    components.RecipeStatus,
+    custom_components.RecipeStatus,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -104,7 +105,7 @@ export async function getRecipeStatus(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, components.RecipeStatus$inboundSchema),
+    M.json(200, custom_components.RecipeStatus$inboundSchema),
     M.fail(["4XX", "5XX"]),
   )(response);
   if (!result.ok) {

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GetRecipeStatusRequest } from "speakeasy-recipe-book/models/operations";
+import { GetRecipeStatusRequest } from "speakeasy-recipe-book/models/custom_operations";
 
 let value: GetRecipeStatusRequest = {
   id: "<id>",

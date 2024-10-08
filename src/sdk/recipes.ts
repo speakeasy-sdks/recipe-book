@@ -8,8 +8,8 @@ import { recipesGetAll } from "../funcs/recipesGetAll.js";
 import { recipesGetById } from "../funcs/recipesGetById.js";
 import { recipesUpdate } from "../funcs/recipesUpdate.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
-import * as components from "../models/components/index.js";
-import * as operations from "../models/operations/index.js";
+import * as custom_components from "../models/custom_components/index.js";
+import * as custom_operations from "../models/custom_operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Recipes extends ClientSDK {
@@ -18,7 +18,7 @@ export class Recipes extends ClientSDK {
    */
   async getAll(
     options?: RequestOptions,
-  ): Promise<Array<components.Recipe>> {
+  ): Promise<Array<custom_components.Recipe>> {
     return unwrapAsync(recipesGetAll(
       this,
       options,
@@ -29,9 +29,9 @@ export class Recipes extends ClientSDK {
    * Create a new recipe
    */
   async create(
-    request: components.RecipeInput,
+    request: custom_components.RecipeInput,
     options?: RequestOptions,
-  ): Promise<components.Recipe> {
+  ): Promise<custom_components.Recipe> {
     return unwrapAsync(recipesCreate(
       this,
       request,
@@ -43,9 +43,9 @@ export class Recipes extends ClientSDK {
    * Get a recipe by ID
    */
   async getById(
-    request: operations.GetRecipeByIdRequest,
+    request: custom_operations.GetRecipeByIdRequest,
     options?: RequestOptions,
-  ): Promise<components.Recipe> {
+  ): Promise<custom_components.Recipe> {
     return unwrapAsync(recipesGetById(
       this,
       request,
@@ -57,7 +57,7 @@ export class Recipes extends ClientSDK {
    * Update an existing recipe by ID
    */
   async update(
-    request: operations.UpdateRecipeRequest,
+    request: custom_operations.UpdateRecipeRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(recipesUpdate(
@@ -71,7 +71,7 @@ export class Recipes extends ClientSDK {
    * Delete a recipe by ID
    */
   async delete(
-    request: operations.DeleteRecipeRequest,
+    request: custom_operations.DeleteRecipeRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(recipesDelete(

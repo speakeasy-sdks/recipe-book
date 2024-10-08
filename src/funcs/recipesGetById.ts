@@ -8,17 +8,17 @@ import * as M from "../lib/matchers.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { pathToFunc } from "../lib/url.js";
-import * as components from "../models/components/index.js";
+import * as custom_components from "../models/custom_components/index.js";
 import {
   ConnectionError,
   InvalidRequestError,
   RequestAbortedError,
   RequestTimeoutError,
   UnexpectedClientError,
-} from "../models/errors/httpclienterrors.js";
-import { SDKError } from "../models/errors/sdkerror.js";
-import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
-import * as operations from "../models/operations/index.js";
+} from "../models/custom_errors/httpclienterrors.js";
+import { SDKError } from "../models/custom_errors/sdkerror.js";
+import { SDKValidationError } from "../models/custom_errors/sdkvalidationerror.js";
+import * as custom_operations from "../models/custom_operations/index.js";
 import { Result } from "../types/fp.js";
 
 /**
@@ -26,11 +26,11 @@ import { Result } from "../types/fp.js";
  */
 export async function recipesGetById(
   client: SpeakeasyRecipeBookCore,
-  request: operations.GetRecipeByIdRequest,
+  request: custom_operations.GetRecipeByIdRequest,
   options?: RequestOptions,
 ): Promise<
   Result<
-    components.Recipe,
+    custom_components.Recipe,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -42,7 +42,8 @@ export async function recipesGetById(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.GetRecipeByIdRequest$outboundSchema.parse(value),
+    (value) =>
+      custom_operations.GetRecipeByIdRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -95,7 +96,7 @@ export async function recipesGetById(
   const response = doResult.value;
 
   const [result] = await M.match<
-    components.Recipe,
+    custom_components.Recipe,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -104,7 +105,7 @@ export async function recipesGetById(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, components.Recipe$inboundSchema),
+    M.json(200, custom_components.Recipe$inboundSchema),
     M.fail([404, "4XX", "5XX"]),
   )(response);
   if (!result.ok) {

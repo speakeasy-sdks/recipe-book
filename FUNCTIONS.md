@@ -21,7 +21,7 @@ specific category of applications.
 ```typescript
 import { SpeakeasyRecipeBookCore } from "speakeasy-recipe-book/core.js";
 import { getRecipeStatus } from "speakeasy-recipe-book/funcs/getRecipeStatus.js";
-import { SDKValidationError } from "speakeasy-recipe-book/models/errors/sdkvalidationerror.js";
+import { SDKValidationError } from "speakeasy-recipe-book/models/custom_errors/sdkvalidationerror.js";
 
 // Use `SpeakeasyRecipeBookCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

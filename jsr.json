@@ -2,12 +2,12 @@
 
 {
   "name": "speakeasy-recipe-book",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "exports": {
     ".": "./src/index.ts",    
-    "./models/errors": "./src/models/errors/index.ts",    
-    "./models/components": "./src/models/components/index.ts",    
-    "./models/operations": "./src/models/operations/index.ts",
+    "./models/custom_errors": "./src/models/custom_errors/index.ts",    
+    "./models/custom_components": "./src/models/custom_components/index.ts",    
+    "./models/custom_operations": "./src/models/custom_operations/index.ts",
     "./lib/config": "./src/lib/config.ts",
     "./lib/http": "./src/lib/http.ts",
     "./lib/retries": "./src/lib/retries.ts",

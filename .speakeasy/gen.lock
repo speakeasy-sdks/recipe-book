@@ -3,10 +3,10 @@ id: be6864d2-c44e-4d1e-863e-759aa84b218e
 management:
   docChecksum: fa735876551f1213c57c6ddfd204379a
   docVersion: 1.0.0
-  speakeasyVersion: 1.410.1
-  generationVersion: 2.434.3
-  releaseVersion: 0.7.0
-  configChecksum: c045bace3d2a62d47a1b30cd49f2c4d2
+  speakeasyVersion: 1.412.1
+  generationVersion: 2.436.3
+  releaseVersion: 0.7.1
+  configChecksum: 3dd9edfe5a6687baaea45607d27de9b1
   repoURL: https://github.com/speakeasy-sdks/recipe-book.git
   installationURL: https://github.com/speakeasy-sdks/recipe-book
 features:
@@ -38,13 +38,13 @@ generatedFiles:
   - RUNTIMES.md
   - USAGE.md
   - docs/lib/utils/retryconfig.md
-  - docs/models/components/recipe.md
-  - docs/models/components/recipeinput.md
-  - docs/models/components/recipestatus.md
-  - docs/models/operations/deletereciperequest.md
-  - docs/models/operations/getrecipebyidrequest.md
-  - docs/models/operations/getrecipestatusrequest.md
-  - docs/models/operations/updatereciperequest.md
+  - docs/models/custom_components/recipe.md
+  - docs/models/custom_components/recipeinput.md
+  - docs/models/custom_components/recipestatus.md
+  - docs/models/custom_operations/deletereciperequest.md
+  - docs/models/custom_operations/getrecipebyidrequest.md
+  - docs/models/custom_operations/getrecipestatusrequest.md
+  - docs/models/custom_operations/updatereciperequest.md
   - docs/sdks/recipes/README.md
   - docs/sdks/speakeasyrecipebook/README.md
   - jsr.json
@@ -76,19 +76,19 @@ generatedFiles:
   - src/lib/sdks.ts
   - src/lib/security.ts
   - src/lib/url.ts
-  - src/models/components/index.ts
-  - src/models/components/recipe.ts
-  - src/models/components/recipeinput.ts
-  - src/models/components/recipestatus.ts
-  - src/models/errors/httpclienterrors.ts
-  - src/models/errors/index.ts
-  - src/models/errors/sdkerror.ts
-  - src/models/errors/sdkvalidationerror.ts
-  - src/models/operations/deleterecipe.ts
-  - src/models/operations/getrecipebyid.ts
-  - src/models/operations/getrecipestatus.ts
-  - src/models/operations/index.ts
-  - src/models/operations/updaterecipe.ts
+  - src/models/custom_components/index.ts
+  - src/models/custom_components/recipe.ts
+  - src/models/custom_components/recipeinput.ts
+  - src/models/custom_components/recipestatus.ts
+  - src/models/custom_errors/httpclienterrors.ts
+  - src/models/custom_errors/index.ts
+  - src/models/custom_errors/sdkerror.ts
+  - src/models/custom_errors/sdkvalidationerror.ts
+  - src/models/custom_operations/deleterecipe.ts
+  - src/models/custom_operations/getrecipebyid.ts
+  - src/models/custom_operations/getrecipestatus.ts
+  - src/models/custom_operations/index.ts
+  - src/models/custom_operations/updaterecipe.ts
   - src/sdk/index.ts
   - src/sdk/recipes.ts
   - src/sdk/sdk.ts

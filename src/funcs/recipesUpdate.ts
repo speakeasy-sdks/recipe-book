@@ -15,10 +15,10 @@ import {
   RequestAbortedError,
   RequestTimeoutError,
   UnexpectedClientError,
-} from "../models/errors/httpclienterrors.js";
-import { SDKError } from "../models/errors/sdkerror.js";
-import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
-import * as operations from "../models/operations/index.js";
+} from "../models/custom_errors/httpclienterrors.js";
+import { SDKError } from "../models/custom_errors/sdkerror.js";
+import { SDKValidationError } from "../models/custom_errors/sdkvalidationerror.js";
+import * as custom_operations from "../models/custom_operations/index.js";
 import { Result } from "../types/fp.js";
 
 /**
@@ -26,7 +26,7 @@ import { Result } from "../types/fp.js";
  */
 export async function recipesUpdate(
   client: SpeakeasyRecipeBookCore,
-  request: operations.UpdateRecipeRequest,
+  request: custom_operations.UpdateRecipeRequest,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -42,7 +42,8 @@ export async function recipesUpdate(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.UpdateRecipeRequest$outboundSchema.parse(value),
+    (value) =>
+      custom_operations.UpdateRecipeRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {

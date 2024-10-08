@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { RecipeStatus } from "speakeasy-recipe-book/models/components";
+import { RecipeStatus } from "speakeasy-recipe-book/models/custom_components";
 
 let value: RecipeStatus = "in_progress";
 ```

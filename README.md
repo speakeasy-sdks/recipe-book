@@ -22,7 +22,7 @@ Application of overlays is shown in the [workflow.yaml](https://github.com/speak
 
 ## `x-speakeasy` Extensions
 
-Speakeast extensions provide fine-tuned control over the SDK, enabling modification to behaviors like retries, pagination, error handling, and other advanced SDK features.
+Speakeasy extensions provide fine-tuned control over the SDK, enabling modification to behaviors like retries, pagination, error handling, and other advanced SDK features.
 
 - [Use `x-speakeasy-name-override` to rename an operation in the OpenAPI Spec.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L33)
 - [Use `x-speakeasy-enums` to add enums to an operation in the OpenAPI Spec.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L137-L145)
@@ -32,11 +32,20 @@ Speakeast extensions provide fine-tuned control over the SDK, enabling modificat
 - [`x-speakeasy-name-override`](https://www.speakeasy.com/docs/methods#change-method-names)
 - [`x-speakeasy-enums`](https://www.speakeasy.com/docs/data-model/enums#enum-member-names)
 
+## Customize Imports
+
+Speakeasy allows you to customize the paths to which models are generated imported.
+
+- [Update model path definitions in `gen.yaml`.]()
+- [Example of customized import paths used in SDK.]()
+
+##### Resources
+- [Customize Imports](https://www.speakeasy.com/docs/structure/imports)
 
 
-
-
-
+<br></br>
+<br></br>
+<br></br>
 
 ## Auto-generated SDK documentions starts here.
 <!-- Start Summary [summary] -->
@@ -238,9 +247,9 @@ run();
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-All SDK methods return a response object or throw an error. By default, an API error will throw a `errors.SDKError`.
+All SDK methods return a response object or throw an error. By default, an API error will throw a `custom_errors.SDKError`.
 
-If a HTTP request fails, an operation my also throw an error from the `models/errors/httpclienterrors.ts` module:
+If a HTTP request fails, an operation my also throw an error from the `models/custom_errors/httpclienterrors.ts` module:
 
 | HTTP Client Error                                    | Description                                          |
 | ---------------------------------------------------- | ---------------------------------------------------- |
@@ -252,13 +261,13 @@ If a HTTP request fails, an operation my also throw an error from the `models/er
 
 In addition, when custom error responses are specified for an operation, the SDK may throw their associated Error type. You can refer to respective *Errors* tables in SDK docs for more details on possible error types for each operation. For example, the `getRecipeStatus` method may throw the following errors:
 
-| Error Type      | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4XX, 5XX        | \*/\*           |
+| Error Type             | Status Code            | Content Type           |
+| ---------------------- | ---------------------- | ---------------------- |
+| custom_errors.SDKError | 4XX, 5XX               | \*/\*                  |
 
 ```typescript
 import { SpeakeasyRecipeBook } from "speakeasy-recipe-book";
-import { SDKValidationError } from "speakeasy-recipe-book/models/errors";
+import { SDKValidationError } from "speakeasy-recipe-book/models/custom_errors";
 
 const speakeasyRecipeBook = new SpeakeasyRecipeBook();
 

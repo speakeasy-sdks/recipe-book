@@ -4,8 +4,8 @@
 
 import { getRecipeStatus } from "../funcs/getRecipeStatus.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
-import * as components from "../models/components/index.js";
-import * as operations from "../models/operations/index.js";
+import * as custom_components from "../models/custom_components/index.js";
+import * as custom_operations from "../models/custom_operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 import { Recipes } from "./recipes.js";
 
@@ -19,9 +19,9 @@ export class SpeakeasyRecipeBook extends ClientSDK {
    * Get the status of a recipe
    */
   async getRecipeStatus(
-    request: operations.GetRecipeStatusRequest,
+    request: custom_operations.GetRecipeStatusRequest,
     options?: RequestOptions,
-  ): Promise<components.RecipeStatus> {
+  ): Promise<custom_components.RecipeStatus> {
     return unwrapAsync(getRecipeStatus(
       this,
       request,

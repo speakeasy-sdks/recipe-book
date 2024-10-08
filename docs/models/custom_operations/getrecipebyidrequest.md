@@ -1,11 +1,11 @@
-# DeleteRecipeRequest
+# GetRecipeByIdRequest
 
 ## Example Usage
 
 ```typescript
-import { DeleteRecipeRequest } from "speakeasy-recipe-book/models/operations";
+import { GetRecipeByIdRequest } from "speakeasy-recipe-book/models/custom_operations";
 
-let value: DeleteRecipeRequest = {
+let value: GetRecipeByIdRequest = {
   recipeId: "<id>",
 };
 ```

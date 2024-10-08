@@ -4,14 +4,14 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
-import * as components from "../components/index.js";
+import * as custom_components from "../custom_components/index.js";
 
 export type UpdateRecipeRequest = {
   recipeId: string;
   /**
    * Updated recipe data
    */
-  recipeInput: components.RecipeInput;
+  recipeInput: custom_components.RecipeInput;
 };
 
 /** @internal */
@@ -21,7 +21,7 @@ export const UpdateRecipeRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   recipeId: z.string(),
-  RecipeInput: components.RecipeInput$inboundSchema,
+  RecipeInput: custom_components.RecipeInput$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
     "RecipeInput": "recipeInput",
@@ -31,7 +31,7 @@ export const UpdateRecipeRequest$inboundSchema: z.ZodType<
 /** @internal */
 export type UpdateRecipeRequest$Outbound = {
   recipeId: string;
-  RecipeInput: components.RecipeInput$Outbound;
+  RecipeInput: custom_components.RecipeInput$Outbound;
 };
 
 /** @internal */
@@ -41,7 +41,7 @@ export const UpdateRecipeRequest$outboundSchema: z.ZodType<
   UpdateRecipeRequest
 > = z.object({
   recipeId: z.string(),
-  recipeInput: components.RecipeInput$outboundSchema,
+  recipeInput: custom_components.RecipeInput$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
     recipeInput: "RecipeInput",
