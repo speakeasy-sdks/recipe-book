@@ -2,7 +2,9 @@
 
 Developer-friendly & type-safe Typescript SDK demonstrating real-code examples of various tasks and use cases.
 
-!["The Recipe Book SDK"](recipe-book-logo.png)
+<p align="center">
+  <img width="50%" src="recipe-book-logo.png" alt="The Recipe Book logo" title="The Recipe Book">
+</p>
 
 ## Overlays
 
@@ -22,8 +24,8 @@ Application of overlays is shown in the [workflow.yaml](https://github.com/speak
 
 Speakeast extensions provide fine-tuned control over the SDK, enabling modification to behaviors like retries, pagination, error handling, and other advanced SDK features.
 
-- [Use `x-speakeasy-name-override` to rename an operation in the OpenAPI Spec.]()
-- [Use `x-speakeasy-enums` to add enums to an operation in the OpenAPI Spec.]()
+- [Use `x-speakeasy-name-override` to rename an operation in the OpenAPI Spec.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L33)
+- [Use `x-speakeasy-enums` to add enums to an operation in the OpenAPI Spec.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L137-L145)
 
 ##### Resources
 - [Customization Basics](https://www.speakeasy.com/docs/customize-basics#2-using-x-speakeasy-extensions)
