@@ -36,8 +36,8 @@ Speakeasy extensions provide fine-tuned control over the SDK, enabling modificat
 
 Speakeasy allows you to customize the paths to which models are generated imported.
 
-- [Update model path definitions in `gen.yaml`.]()
-- [Example of customized import paths used in SDK.]()
+- [Update model path definitions in `gen.yaml`.](https://github.com/speakeasy-sdks/recipe-book/blob/main/.speakeasy/gen.yaml#L30-L37)
+- [Example of customized import paths used in SDK.](https://github.com/speakeasy-sdks/recipe-book/blob/main/src/funcs/recipesGetById.ts#L12-L21)
 
 ##### Resources
 - [Customize Imports](https://www.speakeasy.com/docs/structure/imports)
