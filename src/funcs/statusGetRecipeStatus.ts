@@ -24,7 +24,7 @@ import { Result } from "../types/fp.js";
 /**
  * Get the status of a recipe
  */
-export async function getRecipeStatus(
+export async function statusGetRecipeStatus(
   client: SpeakeasyRecipeBookCore,
   request: custom_operations.GetRecipeStatusRequest,
   options?: RequestOptions,

@@ -1,17 +1,17 @@
-speakeasyVersion: 1.412.1
+speakeasyVersion: 1.416.0
 sources:
     SpeakeasyRecipeBook-OAS:
         sourceNamespace: speakeasy-recipe-book-oas
-        sourceRevisionDigest: sha256:1deda641474c2b804eb89ea165e6e67ac062ac887eadb280e819d8ffc0ccf9f0
-        sourceBlobDigest: sha256:a767e5b292e603eb6db2f81048306257e48e248c48c573fd325ca384c1260533
+        sourceRevisionDigest: sha256:4a02bbc5ab2018c97584be443d945d252e4571e7539b5128b7ef253f52a793d5
+        sourceBlobDigest: sha256:f1e88fcbc19c7ec18b2462aeb91afd54dc4aa14b7ff58db6aefb1970c9817e10
         tags:
             - latest
 targets:
     speakeasy-recipe-book:
         source: SpeakeasyRecipeBook-OAS
         sourceNamespace: speakeasy-recipe-book-oas
-        sourceRevisionDigest: sha256:1deda641474c2b804eb89ea165e6e67ac062ac887eadb280e819d8ffc0ccf9f0
-        sourceBlobDigest: sha256:a767e5b292e603eb6db2f81048306257e48e248c48c573fd325ca384c1260533
+        sourceRevisionDigest: sha256:4a02bbc5ab2018c97584be443d945d252e4571e7539b5128b7ef253f52a793d5
+        sourceBlobDigest: sha256:f1e88fcbc19c7ec18b2462aeb91afd54dc4aa14b7ff58db6aefb1970c9817e10
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: be6864d2-c44e-4d1e-863e-759aa84b218e
 management:
-  docChecksum: fa735876551f1213c57c6ddfd204379a
+  docChecksum: ffa7b3a070756a55ebdbc871058e8d3c
   docVersion: 1.0.0
-  speakeasyVersion: 1.412.1
-  generationVersion: 2.436.3
-  releaseVersion: 0.7.1
-  configChecksum: 3dd9edfe5a6687baaea45607d27de9b1
+  speakeasyVersion: 1.416.0
+  generationVersion: 2.438.1
+  releaseVersion: 0.7.3
+  configChecksum: 5796395aa616705c2d84a131bcc4c388
   repoURL: https://github.com/speakeasy-sdks/recipe-book.git
   installationURL: https://github.com/speakeasy-sdks/recipe-book
 features:
@@ -47,15 +47,16 @@ generatedFiles:
   - docs/models/custom_operations/updatereciperequest.md
   - docs/sdks/recipes/README.md
   - docs/sdks/speakeasyrecipebook/README.md
+  - docs/sdks/status/README.md
   - jsr.json
   - package.json
   - src/core.ts
-  - src/funcs/getRecipeStatus.ts
   - src/funcs/recipesCreate.ts
   - src/funcs/recipesDelete.ts
   - src/funcs/recipesGetAll.ts
   - src/funcs/recipesGetById.ts
   - src/funcs/recipesUpdate.ts
+  - src/funcs/statusGetRecipeStatus.ts
   - src/hooks/hooks.ts
   - src/hooks/index.ts
   - src/hooks/types.ts
@@ -92,6 +93,7 @@ generatedFiles:
   - src/sdk/index.ts
   - src/sdk/recipes.ts
   - src/sdk/sdk.ts
+  - src/sdk/status.ts
   - src/types/blobs.ts
   - src/types/constdatetime.ts
   - src/types/enums.ts

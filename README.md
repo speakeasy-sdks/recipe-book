@@ -34,13 +34,23 @@ Speakeasy extensions provide fine-tuned control over the SDK, enabling modificat
 
 ## Customize Imports
 
-Speakeasy allows you to customize the paths to which models are generated imported.
+Speakeasy allows customization of the paths to which models are generated and imported.
 
 - [Update model path definitions in `gen.yaml`.]()
 - [Example of customized import paths used in SDK.]()
 
 ##### Resources
 - [Customize Imports](https://www.speakeasy.com/docs/structure/imports)
+
+## Customize Namespaces
+
+Speakeasy allows grouping of models into namespaces.
+
+- [Update namespace using `x-speakeasy-group`.]()
+- [Update namespace using tags.]()
+
+##### Resources
+- [Customize Namespaces](https://www.speakeasy.com/docs/structure/namespaces)
 
 
 <br></br>
@@ -119,7 +129,7 @@ import { SpeakeasyRecipeBook } from "speakeasy-recipe-book";
 const speakeasyRecipeBook = new SpeakeasyRecipeBook();
 
 async function run() {
-  const result = await speakeasyRecipeBook.getRecipeStatus({
+  const result = await speakeasyRecipeBook.status.getRecipeStatus({
     id: "<id>",
   });
 
@@ -146,9 +156,10 @@ run();
 * [update](docs/sdks/recipes/README.md#update) - Update an existing recipe by ID
 * [delete](docs/sdks/recipes/README.md#delete) - Delete a recipe by ID
 
-### [SpeakeasyRecipeBook SDK](docs/sdks/speakeasyrecipebook/README.md)
 
-* [getRecipeStatus](docs/sdks/speakeasyrecipebook/README.md#getrecipestatus) - Get the status of a recipe
+### [status](docs/sdks/status/README.md)
+
+* [getRecipeStatus](docs/sdks/status/README.md#getrecipestatus) - Get the status of a recipe
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -168,12 +179,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
-- [`getRecipeStatus`](docs/sdks/speakeasyrecipebook/README.md#getrecipestatus) - Get the status of a recipe
 - [`recipesCreate`](docs/sdks/recipes/README.md#create) - Create a new recipe
 - [`recipesDelete`](docs/sdks/recipes/README.md#delete) - Delete a recipe by ID
 - [`recipesGetAll`](docs/sdks/recipes/README.md#getall) - Get all recipes
 - [`recipesGetById`](docs/sdks/recipes/README.md#getbyid) - Get a recipe by ID
 - [`recipesUpdate`](docs/sdks/recipes/README.md#update) - Update an existing recipe by ID
+- [`statusGetRecipeStatus`](docs/sdks/status/README.md#getrecipestatus) - Get the status of a recipe
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->
@@ -190,7 +201,7 @@ import { SpeakeasyRecipeBook } from "speakeasy-recipe-book";
 const speakeasyRecipeBook = new SpeakeasyRecipeBook();
 
 async function run() {
-  const result = await speakeasyRecipeBook.getRecipeStatus({
+  const result = await speakeasyRecipeBook.status.getRecipeStatus({
     id: "<id>",
   }, {
     retries: {
@@ -231,7 +242,7 @@ const speakeasyRecipeBook = new SpeakeasyRecipeBook({
 });
 
 async function run() {
-  const result = await speakeasyRecipeBook.getRecipeStatus({
+  const result = await speakeasyRecipeBook.status.getRecipeStatus({
     id: "<id>",
   });
 
@@ -274,7 +285,7 @@ const speakeasyRecipeBook = new SpeakeasyRecipeBook();
 async function run() {
   let result;
   try {
-    result = await speakeasyRecipeBook.getRecipeStatus({
+    result = await speakeasyRecipeBook.status.getRecipeStatus({
       id: "<id>",
     });
 
@@ -322,7 +333,7 @@ const speakeasyRecipeBook = new SpeakeasyRecipeBook({
 });
 
 async function run() {
-  const result = await speakeasyRecipeBook.getRecipeStatus({
+  const result = await speakeasyRecipeBook.status.getRecipeStatus({
     id: "<id>",
   });
 
@@ -347,7 +358,7 @@ const speakeasyRecipeBook = new SpeakeasyRecipeBook({
 });
 
 async function run() {
-  const result = await speakeasyRecipeBook.getRecipeStatus({
+  const result = await speakeasyRecipeBook.status.getRecipeStatus({
     id: "<id>",
   });
 

@@ -2,7 +2,7 @@
 
 {
   "name": "speakeasy-recipe-book",
-  "version": "0.7.1",
+  "version": "0.7.3",
   "exports": {
     ".": "./src/index.ts",    
     "./models/custom_errors": "./src/models/custom_errors/index.ts",    
