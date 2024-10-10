@@ -20,6 +20,11 @@ speakeasy configure sources
 
 Application of overlays is shown in the [workflow.yaml](https://github.com/speakeasy-sdks/recipe-book/blob/main/.speakeasy/workflow.yaml#L7-L9) file.
 
+##### Resources
+- [Create Overlays](https://www.speakeasy.com/docs/overlays/create-overlays)
+- [Apply Overlays](https://www.speakeasy.com/docs/overlays/create-overlays)
+- [Common Overlay Examples](https://www.speakeasy.com/examples/sdk-generation/overlays/overlays)
+
 ## `x-speakeasy` Extensions
 
 Speakeasy extensions provide fine-tuned control over the SDK, enabling modification to behaviors like retries, pagination, error handling, and other advanced SDK features.
@@ -36,8 +41,8 @@ Speakeasy extensions provide fine-tuned control over the SDK, enabling modificat
 
 Speakeasy allows customization of the paths to which models are generated and imported.
 
-- [Update model path definitions in `gen.yaml`.]()
-- [Example of customized import paths used in SDK.]()
+- [Update model path definitions in `gen.yaml`.](https://github.com/speakeasy-sdks/recipe-book/blob/main/.speakeasy/gen.yaml#L30-L37)
+- [Example of customized import paths used in SDK.](https://github.com/speakeasy-sdks/recipe-book/blob/main/src/funcs/recipesGetById.ts#L12-L21)
 
 ##### Resources
 - [Customize Imports](https://www.speakeasy.com/docs/structure/imports)
