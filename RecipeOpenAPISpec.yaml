@@ -29,7 +29,16 @@ paths:
                 $ref: '#/components/schemas/RecipeStatus'
 
   /recipes:
+    x-speakeasy-errors:
+      statusCodes:
+        - 4XX
+        - 5XX
     get:
+      x-speakeasy-errors:
+        statusCodes:
+          - 401
+          - 404
+          - 500
       summary: Get all recipes
       operationId: getRecipes
       x-speakeasy-name-override: fetchAllRecipes
@@ -43,6 +52,16 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Recipe'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthError"
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
     post:
       summary: Create a new recipe
       operationId: createRecipe
@@ -197,3 +216,9 @@ components:
         prepTime:
           type: integer
           description: Preparation time in minutes
+    AuthError:
+      type: object
+      properties:
+        message:
+          type: string
+          x-speakeasy-error-message: true

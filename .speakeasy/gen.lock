@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: be6864d2-c44e-4d1e-863e-759aa84b218e
 management:
-  docChecksum: ffa7b3a070756a55ebdbc871058e8d3c
+  docChecksum: 15056d0095a609418631aa0935b17b27
   docVersion: 1.0.0
-  speakeasyVersion: 1.416.0
-  generationVersion: 2.438.1
-  releaseVersion: 0.7.3
-  configChecksum: 5796395aa616705c2d84a131bcc4c388
+  speakeasyVersion: 1.418.3
+  generationVersion: 2.438.3
+  releaseVersion: 0.8.0
+  configChecksum: 0773dcfd759407002829b6f35b66c356
   repoURL: https://github.com/speakeasy-sdks/recipe-book.git
   installationURL: https://github.com/speakeasy-sdks/recipe-book
 features:
@@ -18,6 +18,7 @@ features:
     enumUnions: 0.1.0
     enums: 2.82.1
     envVarSecurityUsage: 0.1.1
+    errors: 2.82.3
     globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.82.4
     groups: 2.81.2
@@ -41,6 +42,7 @@ generatedFiles:
   - docs/models/custom_components/recipe.md
   - docs/models/custom_components/recipeinput.md
   - docs/models/custom_components/recipestatus.md
+  - docs/models/custom_errors/autherror.md
   - docs/models/custom_operations/deletereciperequest.md
   - docs/models/custom_operations/getrecipebyidrequest.md
   - docs/models/custom_operations/getrecipestatusrequest.md
@@ -81,6 +83,7 @@ generatedFiles:
   - src/models/custom_components/recipe.ts
   - src/models/custom_components/recipeinput.ts
   - src/models/custom_components/recipestatus.ts
+  - src/models/custom_errors/autherror.ts
   - src/models/custom_errors/httpclienterrors.ts
   - src/models/custom_errors/index.ts
   - src/models/custom_errors/sdkerror.ts
@@ -109,6 +112,7 @@ examples:
       responses:
         "200":
           application/json: []
+        "401": {}
   createRecipe:
     speakeasy-default-create-recipe:
       requestBody:

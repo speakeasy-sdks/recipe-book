@@ -15,6 +15,7 @@ import {
   RequestTimeoutError,
   UnexpectedClientError,
 } from "../models/custom_errors/httpclienterrors.js";
+import * as custom_errors from "../models/custom_errors/index.js";
 import { SDKError } from "../models/custom_errors/sdkerror.js";
 import { SDKValidationError } from "../models/custom_errors/sdkvalidationerror.js";
 import { Result } from "../types/fp.js";
@@ -28,6 +29,7 @@ export async function recipesGetAll(
 ): Promise<
   Result<
     Array<custom_components.Recipe>,
+    | custom_errors.AuthError
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -62,7 +64,7 @@ export async function recipesGetAll(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["4XX", "5XX"],
+    errorCodes: ["401", "404", "4XX", "500", "5XX"],
     retryConfig: options?.retries
       || client._options.retryConfig,
     retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
@@ -72,8 +74,13 @@ export async function recipesGetAll(
   }
   const response = doResult.value;
 
+  const responseFields = {
+    HttpMeta: { Response: response, Request: req },
+  };
+
   const [result] = await M.match<
     Array<custom_components.Recipe>,
+    | custom_errors.AuthError
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -83,8 +90,9 @@ export async function recipesGetAll(
     | ConnectionError
   >(
     M.json(200, z.array(custom_components.Recipe$inboundSchema)),
-    M.fail(["4XX", "5XX"]),
-  )(response);
+    M.jsonErr(401, custom_errors.AuthError$inboundSchema),
+    M.fail([404, "4XX", 500, "5XX"]),
+  )(response, { extraFields: responseFields });
   if (!result.ok) {
     return result;
   }

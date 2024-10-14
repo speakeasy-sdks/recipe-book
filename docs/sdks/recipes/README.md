@@ -74,9 +74,10 @@ run();
 
 ### Errors
 
-| Error Type             | Status Code            | Content Type           |
-| ---------------------- | ---------------------- | ---------------------- |
-| custom_errors.SDKError | 4XX, 5XX               | \*/\*                  |
+| Error Type              | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| custom_errors.AuthError | 401                     | application/json        |
+| custom_errors.SDKError  | 4XX, 5XX                | \*/\*                   |
 
 ## create
 

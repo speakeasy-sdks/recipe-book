@@ -275,24 +275,26 @@ If a HTTP request fails, an operation my also throw an error from the `models/cu
 | InvalidRequestError                                  | Any input used to create a request is invalid        |
 | UnexpectedClientError                                | Unrecognised or unexpected error                     |
 
-In addition, when custom error responses are specified for an operation, the SDK may throw their associated Error type. You can refer to respective *Errors* tables in SDK docs for more details on possible error types for each operation. For example, the `getRecipeStatus` method may throw the following errors:
+In addition, when custom error responses are specified for an operation, the SDK may throw their associated Error type. You can refer to respective *Errors* tables in SDK docs for more details on possible error types for each operation. For example, the `getAll` method may throw the following errors:
 
-| Error Type             | Status Code            | Content Type           |
-| ---------------------- | ---------------------- | ---------------------- |
-| custom_errors.SDKError | 4XX, 5XX               | \*/\*                  |
+| Error Type              | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| custom_errors.AuthError | 401                     | application/json        |
+| custom_errors.SDKError  | 4XX, 5XX                | \*/\*                   |
 
 ```typescript
 import { SpeakeasyRecipeBook } from "speakeasy-recipe-book";
-import { SDKValidationError } from "speakeasy-recipe-book/models/custom_errors";
+import {
+  AuthError,
+  SDKValidationError,
+} from "speakeasy-recipe-book/models/custom_errors";
 
 const speakeasyRecipeBook = new SpeakeasyRecipeBook();
 
 async function run() {
   let result;
   try {
-    result = await speakeasyRecipeBook.status.getRecipeStatus({
-      id: "<id>",
-    });
+    result = await speakeasyRecipeBook.recipes.getAll();
 
     // Handle the result
     console.log(result);
@@ -303,6 +305,11 @@ async function run() {
         console.error(err.pretty());
         // Raw value may also be inspected
         console.error(err.rawValue);
+        return;
+      }
+      case (err instanceof AuthError): {
+        // Handle err.data$: AuthErrorData
+        console.error(err);
         return;
       }
       default: {
