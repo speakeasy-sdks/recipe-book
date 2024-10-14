@@ -51,8 +51,8 @@ Speakeasy allows customization of the paths to which models are generated and im
 
 Speakeasy allows grouping of models into namespaces.
 
-- [Update namespace using `x-speakeasy-group`.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L15-L16)
-- [Update namespace using tags.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L36)
+- [Update namespace using `x-speakeasy-group`.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L36)
+- [Update namespace using tags.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L15-L16)
 
 ##### Resources
 - [Customize Namespaces](https://www.speakeasy.com/docs/structure/namespaces)
