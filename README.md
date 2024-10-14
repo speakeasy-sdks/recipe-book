@@ -57,15 +57,12 @@ Speakeasy allows grouping of models into namespaces.
 ##### Resources
 - [Customize Namespaces](https://www.speakeasy.com/docs/structure/namespaces)
 
-### Error Handling
+## Customize Error Handling
 
 Speakeasy allows custom error handling for different status codes, such as 401 (Unauthorized) or 500 (Internal Server Error).
 
-- **401 Unauthorized:**
-  See how the [getRecipes](https://github.com/yourrepo/blob/main/src/recipes.ts#L10) function handles a 401 error with an `AuthError`.
-
-- **500 Internal Server Error:**
-  Check the [RecipeService](https://github.com/yourrepo/blob/main/src/recipeService.ts#L40) for handling server errors using the `InternalServerError` class.
+- [Define Custom Errors](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L32-L64)
+- [Define AuthError Schema](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L219-L224)
 
   ##### Resources
 - [Customize Error Handling](https://www.speakeasy.com/docs/responses/errors)
