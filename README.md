@@ -20,7 +20,7 @@ The CLI then prompts for the required information:
 What is the location of your OpenAPI Spec file? RecipeOpenAPISpec.yaml
 What is a good name for this source document? RecipeOpenAPISpec
 Which target would you like to generate? typescript
-Name your SDK: MyRecipeBookSDK
+Name your SDK: speakeasy-recipe-book
 ```
 If successful, an output similar to this will be displayed:
 
