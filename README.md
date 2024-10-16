@@ -122,9 +122,8 @@ Speakeasy allows custom error handling for different status codes, such as 401 (
 
 Is the guide missing a particular example that would be helpful? If so, email logan@speakeasy.com with your feedback!
 
-<br></br>
 
-# Auto-generated SDK documentions starts here.
+# Auto-generated SDK documention starts here.
 <!-- Start Summary [summary] -->
 ## Summary
 
