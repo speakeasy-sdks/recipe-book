@@ -3,7 +3,7 @@
 Developer-friendly & type-safe Typescript SDK demonstrating real-code examples of various tasks and use cases.
 
 <p align="center">
-  <img width="50%" src="recipe-book-logo.png" alt="The Recipe Book logo" title="The Recipe Book">
+  <img width="50%" src="recipe-book-logo.svg" alt="The Recipe Book logo" title="The Recipe Book">
 </p>
 
 ## Overlays
