@@ -18,7 +18,7 @@ The CLI then prompts for the required information:
 
 ```bash
 What is the location of your OpenAPI Spec file? RecipeOpenAPISpec.yaml
-What is a good name for this source document? RecipeOpenAPISpec
+What is a good name for this source document? SpeakeasyRecipeBook-OAS
 Which target would you like to generate? typescript
 Name your SDK: speakeasy-recipe-book
 ```
