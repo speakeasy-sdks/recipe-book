@@ -2,13 +2,13 @@
   <img width="50%" src="recipe-book-logo.svg" alt="The Recipe Book logo" title="The Recipe Book">
 </p>
 
-# Recipe Book Example TypeScript SDK
+# Example TypeScript SDK
 
 The goal of this example SDK is to show a basic representation of generating and customizing a TypeScript SDK with Speakeasy. It is based on a simple (and fictional) CRUD API for managing recipes. Use this README as a guide to understand how the SDK is generated and customized. Links to relevant sections of the codebase are provided here in order to explore the code in action and see best practices for various customizations.
 
 ## Initial Generation
 
-[Once the prerequisites are installed](https://www.speakeasy.com/docs/create-client-sdks#prerequisites) a valid OpenAPI Specification (OAS) file is available (in this case, [RecipeOpenAPISpec.yaml](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml)), the following command is used to generate the SDK:
+[Once the prerequisites are installed](https://www.speakeasy.com/docs/create-client-sdks#prerequisites) and a valid OpenAPI Specification (OAS) file is available (in this case, [RecipeOpenAPISpec.yaml](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml)), the following command is used to generate the SDK:
 
 ```bash
 speakeasy quickstart
@@ -54,7 +54,7 @@ SDKs Generated Successfully
 └─speakeasy-recipe-book overview: https://go.speakeasy.com/CKVwn
 ```
 
-The resulting `workflow.yaml` file generated can be found [here](https://github.com/speakeasy-sdks/recipe-book/blob/main/.speakeasy/workflow.yaml).
+The resulting `workflow.yaml` file generated can be found [here](https://github.com/speakeasy-sdks/recipe-book/blob/main/.speakeasy/workflow.yaml). Subsequent generations can be run at any time using `speakeasy run`.
 
 Now that the base SDK is generated, customizations for a variety of use cases can be applied. The following is a sampling of methods that can be used to customize the SDK.
 
@@ -119,6 +119,8 @@ Speakeasy allows custom error handling for different status codes, such as 401 (
 
   ##### Resources
 - [Customize Error Handling](https://www.speakeasy.com/docs/responses/errors)
+
+Is the guide missing a particular example that would be helpful? If so, email logan@speakeasy.com with your feedback!
 
 <br></br>
 
