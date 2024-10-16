@@ -117,7 +117,7 @@ Speakeasy allows custom error handling for different status codes, such as 401 (
 - [Define Custom Errors](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L32-L64)
 - [Define AuthError Schema](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L219-L224)
 
-  ##### Resources
+##### Resources
 - [Customize Error Handling](https://www.speakeasy.com/docs/responses/errors)
 
 Is the guide missing a particular example that would be helpful? If so, email logan@speakeasy.com with your feedback!
