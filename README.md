@@ -1,10 +1,62 @@
-# The Speakeasy Recipe Book SDK for TypeScript
-
-Developer-friendly & type-safe Typescript SDK demonstrating real-code examples of various tasks and use cases.
-
 <p align="center">
   <img width="50%" src="recipe-book-logo.svg" alt="The Recipe Book logo" title="The Recipe Book">
 </p>
+
+# Recipe Book Example TypeScript SDK
+
+The goal of this example SDK is to show a basic representation of generating and customizing a TypeScript SDK with Speakeasy. It is based on a simple (and fictional) CRUD API for managing recipes. Use this README as a guide to understand how the SDK is generated and customized. Links to relevant sections of the codebase are provided here in order to explore the code in action and see best practices for various customizations.
+
+## Initial Generation
+
+[Once the prerequisites are installed](https://www.speakeasy.com/docs/create-client-sdks#prerequisites) a valid OpenAPI Specification (OAS) file is available (in this case, [RecipeOpenAPISpec.yaml](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml)), the following command is used to generate the SDK:
+
+```bash
+speakeasy quickstart
+```
+
+The CLI then prompts for the required information:
+
+```bash
+What is the location of your OpenAPI Spec file? RecipeOpenAPISpec.yaml
+What is a good name for this source document? RecipeOpenAPISpec
+Which target would you like to generate? typescript
+Name your SDK: MyRecipeBookSDK
+```
+If successful, an output similar to this will be displayed:
+
+```bash
+│ Workflow - success                             
+│ └─Target: speakeasy-recipe-book - success      
+│   └─Source: SpeakeasyRecipeBook-OAS - success  
+│     └─Applying Overlays - success              
+│       └─Apply 3 overlay(s) - success           
+│     └─Validating Document - success            
+│     └─Diagnosing OpenAPI - success             
+│     └─Tracking OpenAPI Changes - success       
+│       └─Snapshotting OpenAPI Revision - success
+│       └─Storing OpenAPI Revision - success     
+│     └─Computing Document Changes - success     
+│       └─Downloading prior revision - success   
+│       └─Computing changes - success            
+│       └─Uploading changes report - success     
+│   └─Validating gen.yaml - success              
+│   └─Generating Typescript SDK - success        
+│     └─Setup Environment - success              
+│     └─Load and Validate Document - success     
+│     └─Generate SDK - success                   
+                                                 
+
+Source SpeakeasyRecipeBook-OAS Compiled Successfully
+└─Lint report: https://go.speakeasy.com/5lKqS
+└─API Change report: https://go.speakeasy.com/ed1Kh
+
+SDKs Generated Successfully
+└─speakeasy-recipe-book overview: https://go.speakeasy.com/CKVwn
+```
+
+The resulting `workflow.yaml` file generated can be found [here](https://github.com/speakeasy-sdks/recipe-book/blob/main/.speakeasy/workflow.yaml).
+
+Now that the base SDK is generated, customizations for a variety of use cases can be applied. The following is a sampling of methods that can be used to customize the SDK.
 
 ## Overlays
 
@@ -14,11 +66,12 @@ Overlays are applied to extend or alter the functionality of the Recipe Book API
 - [Hide an internal-only operation from public SDK and mark it as internal only](https://github.com/speakeasy-sdks/recipe-book/blob/main/internal-staff-overlay.yaml)
 
 Overlays are then added as a new workflow source using:
+
 ```bash
 speakeasy configure sources
 ```
 
-Application of overlays is shown in the [workflow.yaml](https://github.com/speakeasy-sdks/recipe-book/blob/main/.speakeasy/workflow.yaml#L7-L9) file.
+Application of overlays is shown in the [workflow.yaml](https://github.com/speakeasy-sdks/recipe-book/blob/main/.speakeasy/workflow.yaml#L7-L10) file.
 
 ##### Resources
 - [Create Overlays](https://www.speakeasy.com/docs/overlays/create-overlays)
@@ -29,8 +82,8 @@ Application of overlays is shown in the [workflow.yaml](https://github.com/speak
 
 Speakeasy extensions provide fine-tuned control over the SDK, enabling modification to behaviors like retries, pagination, error handling, and other advanced SDK features.
 
-- [Use `x-speakeasy-name-override` to rename an operation in the OpenAPI Spec.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L33)
-- [Use `x-speakeasy-enums` to add enums to an operation in the OpenAPI Spec.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L137-L145)
+- [Use `x-speakeasy-name-override` to rename an operation in the OpenAPI Spec.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L44)
+- [Use `x-speakeasy-enums` to add enums to an operation in the OpenAPI Spec.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L167-L170)
 
 ##### Resources
 - [Customization Basics](https://www.speakeasy.com/docs/customize-basics#2-using-x-speakeasy-extensions)
@@ -51,7 +104,7 @@ Speakeasy allows customization of the paths to which models are generated and im
 
 Speakeasy allows grouping of models into namespaces.
 
-- [Update namespace using `x-speakeasy-group`.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L36)
+- [Update namespace using `x-speakeasy-group`.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L45)
 - [Update namespace using tags.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L15-L16)
 
 ##### Resources
@@ -68,10 +121,8 @@ Speakeasy allows custom error handling for different status codes, such as 401 (
 - [Customize Error Handling](https://www.speakeasy.com/docs/responses/errors)
 
 <br></br>
-<br></br>
-<br></br>
 
-## Auto-generated SDK documentions starts here.
+# Auto-generated SDK documentions starts here.
 <!-- Start Summary [summary] -->
 ## Summary
 
