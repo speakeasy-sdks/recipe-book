@@ -126,7 +126,7 @@ Speakeasy allows custom pagination rules for each API operation using the `x-spe
 
 - [Configure Pagination for /recipes response](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L67-L74)
 
-  ##### Resources
+##### Resources
 - [Adding Pagination](https://www.speakeasy.com/docs/runtime/pagination)
 
 Is the guide missing a particular example that would be helpful? If so, email logan@speakeasy.com with your feedback!
