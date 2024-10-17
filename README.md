@@ -120,6 +120,15 @@ Speakeasy allows custom error handling for different status codes, such as 401 (
   ##### Resources
 - [Customize Error Handling](https://www.speakeasy.com/docs/responses/errors)
 
+## Enable Pagination
+
+Speakeasy allows custom pagination rules for each API operation using the `x-speakeasy-pagination` extension.
+
+- [Configure Pagination for `/recipes` response]()
+
+  ##### Resources
+- [Adding Pagination](https://www.speakeasy.com/docs/runtime/pagination)
+
 Is the guide missing a particular example that would be helpful? If so, email logan@speakeasy.com with your feedback!
 
 
@@ -355,7 +364,9 @@ const speakeasyRecipeBook = new SpeakeasyRecipeBook();
 async function run() {
   let result;
   try {
-    result = await speakeasyRecipeBook.recipes.getAll();
+    result = await speakeasyRecipeBook.recipes.getAll({
+      page: 461008,
+    });
 
     // Handle the result
     console.log(result);

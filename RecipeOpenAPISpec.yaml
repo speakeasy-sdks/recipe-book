@@ -34,6 +34,12 @@ paths:
         - 4XX
         - 5XX
     get:
+      parameters:
+      - name: page
+        in: query
+        schema:
+          type: integer
+        required: true
       x-speakeasy-errors:
         statusCodes:
           - 401
@@ -49,9 +55,23 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Recipe'
+                title: res
+                type: object
+                properties:
+                  resultArray:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Recipe'
+                required: 
+                  - resultArray
+        x-speakeasy-pagination:
+          type: offsetLimit
+          inputs:
+            - name: page
+              in: parameters
+              type: page
+          outputs:
+            results: $.resultArray
         '401':
           description: Unauthorized
           content:

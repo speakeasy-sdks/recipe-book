@@ -17,10 +17,12 @@ export class Recipes extends ClientSDK {
    * Get all recipes
    */
   async getAll(
+    request: custom_operations.GetRecipesRequest,
     options?: RequestOptions,
-  ): Promise<Array<custom_components.Recipe>> {
+  ): Promise<custom_operations.GetRecipesRes> {
     return unwrapAsync(recipesGetAll(
       this,
+      request,
       options,
     ));
   }
