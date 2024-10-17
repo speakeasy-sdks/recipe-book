@@ -82,8 +82,8 @@ Application of overlays is shown in the [workflow.yaml](https://github.com/speak
 
 Speakeasy extensions provide fine-tuned control over the SDK, enabling modification to behaviors like retries, pagination, error handling, and other advanced SDK features.
 
-- [Use `x-speakeasy-name-override` to rename an operation in the OpenAPI Spec.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L44)
-- [Use `x-speakeasy-enums` to add enums to an operation in the OpenAPI Spec.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L167-L170)
+- [Use `x-speakeasy-name-override` to rename an operation in the OpenAPI Spec.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L50)
+- [Use `x-speakeasy-enums` to add enums to an operation in the OpenAPI Spec.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L187-L190)
 
 ##### Resources
 - [Customization Basics](https://www.speakeasy.com/docs/customize-basics#2-using-x-speakeasy-extensions)
@@ -104,7 +104,7 @@ Speakeasy allows customization of the paths to which models are generated and im
 
 Speakeasy allows grouping of models into namespaces.
 
-- [Update namespace using `x-speakeasy-group`.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L45)
+- [Update namespace using `x-speakeasy-group`.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L51)
 - [Update namespace using tags.](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L15-L16)
 
 ##### Resources
@@ -114,8 +114,8 @@ Speakeasy allows grouping of models into namespaces.
 
 Speakeasy allows custom error handling for different status codes, such as 401 (Unauthorized) or 500 (Internal Server Error).
 
-- [Define Custom Errors](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L32-L64)
-- [Define AuthError Schema](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L219-L224)
+- [Define Custom Errors](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L32-L84)
+- [Define AuthError Schema](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L239-L244)
 
 ##### Resources
 - [Customize Error Handling](https://www.speakeasy.com/docs/responses/errors)
@@ -124,7 +124,7 @@ Speakeasy allows custom error handling for different status codes, such as 401 (
 
 Speakeasy allows custom pagination rules for each API operation using the `x-speakeasy-pagination` extension.
 
-- [Configure Pagination for `/recipes` response]()
+- [Configure Pagination for /recipes response](https://github.com/speakeasy-sdks/recipe-book/blob/main/RecipeOpenAPISpec.yaml#L67-L74)
 
   ##### Resources
 - [Adding Pagination](https://www.speakeasy.com/docs/runtime/pagination)
